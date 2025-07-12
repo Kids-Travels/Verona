@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
             background-size: 400% 400%;
             animation: gradientShift 6s ease infinite;
@@ -49,9 +49,10 @@
         .title {
             font-size: 2.5rem;
             color: white;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
             margin-bottom: 10px;
             animation: pulse 2s ease-in-out infinite;
+            font-weight: bold;
         }
 
         @keyframes pulse {
@@ -62,8 +63,9 @@
         .subtitle {
             font-size: 1.2rem;
             color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
             margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .kids-names {
@@ -75,12 +77,12 @@
         }
 
         .name-badge {
-            background: rgba(255,255,255,0.9);
-            padding: 8px 16px;
+            background: rgba(255,255,255,0.95);
+            padding: 10px 18px;
             border-radius: 25px;
             color: #333;
-            font-weight: bold;
-            font-size: 0.9rem;
+            font-weight: 600;
+            font-size: 1rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             animation: float 3s ease-in-out infinite;
             animation-delay: var(--delay);
@@ -125,6 +127,14 @@
             height: auto;
             display: block;
             border-radius: 15px;
+        }
+
+        video::-webkit-media-controls-fullscreen-button {
+            display: none !important;
+        }
+
+        video::-webkit-media-controls-overlay-enclosure {
+            display: none !important;
         }
 
         .play-button {
@@ -226,8 +236,8 @@
 
         @media (max-width: 480px) {
             .title { font-size: 2rem; }
-            .subtitle { font-size: 1rem; }
-            .name-badge { font-size: 0.8rem; padding: 6px 12px; }
+            .subtitle { font-size: 1.1rem; }
+            .name-badge { font-size: 0.9rem; padding: 8px 14px; }
             .video-container { padding: 15px; }
             .play-button { width: 60px; height: 60px; }
             .play-button::after {
@@ -257,7 +267,7 @@
 
         <div class="video-container">
             <div class="video-wrapper">
-                <video id="babaVideo" controls poster="" preload="metadata">
+                <video id="babaVideo" controls playsinline webkit-playsinline x5-playsinline poster="" preload="metadata">
                     <source src="./babas-message.mov" type="video/quicktime">
                     <source src="./babas-message.mp4" type="video/mp4">
                     Your browser doesn't support the video tag.
